@@ -1,0 +1,115 @@
+body, html, #header {
+  background-color: #252525;
+  color: #ffffff;
+  font-family: 'Oswald', sans-serif;
+}
+
+#header {
+  border-bottom: none;
+  position: relative !important;
+  height: 8rem;
+
+  .navbar {
+      padding: 6em;
+    .navbar-brand {
+      background-color: #FFFFFF;
+      img {
+        height: 100px !important;
+      }
+    }
+  }
+
+}
+
+#start {
+  background-image: url('../images/body-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 110%;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  color: #ffffff;
+  font-family: 'Oswald', sans-serif;
+}
+
+h1, h2 {
+  text-transform: uppercase;
+}
+
+
+.outer-nav-wrapper {
+  border-top: 1px solid #4F4F4F;
+  border-bottom: 1px solid #4F4F4F;
+  text-align:center;
+  background-color: #252525;
+  .navigation-lower {
+    list-style: none !important;
+    display: inline-flex;
+    width: 50%;
+    margin: 0 auto;
+    justify-content: center;
+    li {
+      text-transform: uppercase;
+      padding: 2% 8%;
+      border-left: 1px solid #4F4F4F;
+      border-right: 1px solid #4F4F4F;
+      margin-top: 0;
+      p {
+        cursor: pointer;
+        color: #ffffff !important;
+        text-decoration: none;
+      }
+      &:hover {
+        background: linear-gradient(45deg, #005595, #252525);
+      }
+      &:has(p.active) {
+        background: linear-gradient(45deg, #005595, #252525);
+      }
+    }
+  }
+}
+
+
+.track-map {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  svg {
+    width: 300px;
+    position: absolute;
+    top: -50px;
+    height: 300px;
+    path {
+      stroke: #FFFFFF !important;
+    }
+  }
+}
+
+.animated-dot {
+  transition: cx 0.1s, cy 0.1s;
+}
+
+#body-wrapper {
+  .grid-lg {
+    margin-top: 12px;
+  }
+  .circuit-modules {
+
+  }
+  .track-video {
+    @media (min-width: 768px) {
+      text-align: right;
+      padding-top: 32px;
+      padding-right: 12%;
+    }
+  }
+}
+
+#footer {
+  background: #545454 !important;
+  color: #4F4F4F !important;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

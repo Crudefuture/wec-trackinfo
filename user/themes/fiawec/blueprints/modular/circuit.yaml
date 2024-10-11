@@ -1,0 +1,31 @@
+title: Circuit
+form:
+  fields:
+    title:
+      type: text
+      label: Title
+    menu:
+      type: text
+      label: Menu
+    circuit.location:
+      type: text
+      label: Location
+    circuit.length:
+      type: text
+      label: Length
+    circuit.turns:
+      type: text
+      label: Turns
+    circuit.fia_grade:
+      type: text
+      label: FIA Grade
+    lap_records:
+      type: list
+      label: Lap Records
+      fields:
+        .car_class:
+          type: text
+          label: Car Class
+        .time:
+          type: text
+          label: Time

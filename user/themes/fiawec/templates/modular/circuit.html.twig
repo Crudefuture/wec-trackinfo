@@ -1,0 +1,26 @@
+<div class="circuit-details" id="{{ module.menu|hyphenize }}">
+    <h2>{{ circuit.title }}</h2>
+    <div class="columns">
+        <div class="column col-6 col-sm-12">
+            <p>Location: {{ location | default('Location not set') }}</p>
+            <p>Length: {{ length | default('Length not set') }}</p>
+            <p>Turns: {{ circuit.turns | default('Turns not set') }}</p>
+            <p>FIA Grade: {{ circuit.fia_grade | default('Grade not set') }}</p>
+            <h4>Lap Records</h4>
+            <ul>
+                {% for car_class, time in circuit.lap_records|dict2items %}
+                    <li>{{ car_class }}: {{ time }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="column col-6 col-sm-12">
+            <div class="track-layout">
+                <div v-html="svgContents[currentTrack]" class="track-map"></div>
+            </div>
+        </div>
+        <div class="column col-12 track-video">
+            <iframe width="420" height="240" src="https://www.youtube.com/embed/kbrczDem74A" title="Onboard with Antonio Fuoco Ferrari 499P Hypercar 🇮🇹 I 2024 6 Hours of COTA I FIA WEC" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" autoplay="true" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+

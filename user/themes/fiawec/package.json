@@ -1,0 +1,31 @@
+{
+  "name": "fiawec",
+  "version": "1.0.0",
+  "description": "A base code package to handle modular code packages in WordPress and PHP.",
+  "scripts": {
+    "watch": "grunt watch",
+    "build": "grunt dist"
+  },
+  "author": "Vaughn Pietersen",
+  "license": "ISC",
+  "devDependencies": {
+    "breakpoint-sass": "^2.7.1",
+    "grunt": "^1.6.1",
+    "grunt-contrib-clean": "^2.0.1",
+    "grunt-contrib-cssmin": "^5.0.0",
+    "grunt-contrib-imagemin": "^4.0.0",
+    "grunt-contrib-sass": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-cwebp": "^3.0.3",
+    "grunt-terser": "^2.0.0",
+    "load-grunt-tasks": "^5.1.0",
+    "npm-check": "^6.0.1",
+    "terser": "^5.26.0"
+  },
+  "properties": {
+    "src": "src",
+    "scripts": "js",
+    "styles": "css",
+    "images": "images"
+  }
+}

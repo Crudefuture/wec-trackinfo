@@ -1,0 +1,33 @@
+form: flex-pages
+id: 'tmp://forms/session/13684aa6c9c82756175494798c814522'
+unique_id: 13684aa6c9c82756175494798c814522
+url: '/pages/modular/_interlagos/_spa-francorchamps/:add'
+user:
+  username: vjustinpietersen
+  email: vpietersen021@gmail.com
+timestamps:
+  created: 1728498872
+  updated: 1728498872
+data: null
+files: {  }
+object:
+  type: pages
+  key: modular/_interlagos/_spa-francorchamps
+  storage_key: ''
+  timestamp: 0
+  serialized:
+    __META: {  }
+    storage_key: ''
+    parent_key: 03.modular/_interlagos
+    order: false
+    folder: _spa-francorchamps
+    template: circuit
+    lang: ''
+    root: false
+    route: /modular/_interlagos
+    name: modular/circuit
+    modular: '1'
+    header:
+      title: Spa-Francorchamps
+      body_classes: modular
+    frontmatter: "title: Spa-Francorchamps\nbody_classes: modular\n"

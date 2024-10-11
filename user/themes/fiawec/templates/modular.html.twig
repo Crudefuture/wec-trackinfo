@@ -1,0 +1,80 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set show_onpage_menu = header.onpage_menu == true or header.onpage_menu is null %}
+
+{% block javascripts %}
+    {% if show_onpage_menu %}
+        {% do assets.add('theme://js/singlepagenav.min.js') %}
+    {% endif %}
+    {{ parent() }}
+{% endblock %}
+
+{% block bottom %}
+    {{ parent() }}
+    {% if show_onpage_menu %}
+        <script>
+            // singlePageNav initialization & configuration
+            $('ul.navigation').singlePageNav({
+                offset: $('#header').outerHeight(),
+                filter: ':not(.external)',
+                updateHash: true,
+                currentClass: 'active'
+            });
+        </script>
+    {% endif %}
+{% endblock %}
+
+{% block header_navigation %}
+    {% if show_onpage_menu %}
+        <ul class="navigation">
+            {% for module in page.collection() if module.header.visible is not same as(false) %}
+                <li>
+                    <a href="#" @click.prevent="updateTrack('{{ module.menu|hyphenize }}')" :class="{ active: currentTrack === '{{ module.menu|hyphenize }}' }">
+                        {{ module.menu }}
+                    </a>
+                </li>
+            {% endfor %}
+            {% for mitem in site.menu %}
+                <li>
+                    <a {% if mitem.class %}class="{{ mitem.class }}"{% endif %} href="{{ mitem.url }}">
+                        {% if mitem.icon %}<i class="fa fa-{{ mitem.icon }}"></i>{% endif %}
+                        {{ mitem.text }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block hero %}
+    {% for module in page.collection() if module.template == 'modular/hero' %}
+        <div id="{{ module.menu|hyphenize }}" class="test"></div>
+        {{ module.content }}
+    {% endfor %}
+{% endblock %}
+
+{% block content %}
+    <div id="app">
+        <div class="outer-nav-wrapper">
+            <ul class="navigation-lower">
+                {% for module in page.collection() if module.header.visible is not same as(false) %}
+                    <li>
+                        <p id="#{{ module.menu|hyphenize }}" @click.prevent="updateTrack('{{ module.menu|hyphenize }}')" :class="{ active: currentTrack === '{{ module.menu|hyphenize }}' }">
+                            {{ module.menu }}
+                        </p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="container grid-lg circuit-modules">
+            {% for module in page.collection if module.template == 'modular/circuit' %}
+                <div v-show="currentTrack === '{{ module.menu|hyphenize }}'" class="circuit-module" id="{{ module.menu|hyphenize }}">
+                    {% include 'modular/circuit.html.twig' with { 'circuit': module } %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+

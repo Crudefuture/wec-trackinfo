@@ -1,2 +1,1 @@
-# wec-trackinfo
-A microsite depicting detailed information on the rounds of the World Endurance Championship calendar
+When cloning, please add the hostname 'wec.test' to your virtual hosts file for your local server.

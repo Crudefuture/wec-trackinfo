@@ -1,0 +1,11 @@
+state: enabled
+email: vpietersen021@gmail.com
+fullname: 'Vaughn Pietersen'
+title: Administrator
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$88Ozf0LFzucStuzSRBeyNu2HD1teav/srthcnZnNTz5Ca8ucYj.16

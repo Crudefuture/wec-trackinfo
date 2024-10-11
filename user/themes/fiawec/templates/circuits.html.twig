@@ -1,0 +1,26 @@
+{# templates/modular/circuits.html.twig #}
+
+{% extends 'partials/base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <h1>{{ page.title }}</h1>
+    <nav>
+        <ul class="nav-tabs">
+            {% for circuit in header.circuits %}
+                <li>
+                    <a href="#{{ circuit.slug }}" data-toggle="tab">{{ circuit.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+    <div class="tab-content">
+        {% for circuit in header.circuits %}
+            <div class="tab-pane" id="{{ circuit.slug }}">
+                {% include 'modular/circuit.html.twig' with { circuit: circuit } %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
